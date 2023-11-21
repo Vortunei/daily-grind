@@ -68,5 +68,8 @@ switch(myDay){
 
 //Injects our coffee object into the page
 document.getElementById("coffee-cup").innerHTML = coffeeTemplate(coffee);
+//Changes color of HTML element
+document.querySelector("html").style.backgroundColor = coffee.color;
+
 
 console.log(today);
