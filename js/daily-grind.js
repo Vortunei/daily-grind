@@ -36,16 +36,48 @@ let myDay = myDate.getDay();
 let today = "";
 let coffee ="";
 
+//use location object to access querystring (address bar)
+const queryString = window.location.search;
+    
+//output to console    
+console.log(queryString);
+    
+//separate query string parameters
+const urlParams = new URLSearchParams(queryString);
 
+if(urlParams.has("day")){//from querystring
+    myDay = urlParams.get("day");
+ }
+ //change string to a number to an integer
+myDay=parseInt(myDay);
 
 switch(myDay){
 
     case 0:
         today = "Sunday";
+        coffee = {
+            name:"Cold Brew",
+            pic:"images/cold-brew.jpg",
+            alt:"a picture of an cold brew",
+            color:"red",
+            day:"Sunday",
+            desc:`it perks me up!`
+        
+        };
+        
     break;
 
     case 1:
         today = "Monday";
+        coffee = {
+            name:"Pumpkin Spice Latte",
+            pic:"images/pumpkin-spice-latte.jpg",
+            alt:"a picture of a pumpkin spice latte",
+            color:"beige",
+            day:"Monday",
+            desc:`it is so delicious!`
+        
+        };
     break;
 
     case 2:
@@ -59,6 +91,61 @@ switch(myDay){
             desc:`I like me some bubble Tea!`
         
         };
+    break;
+
+        case 3:
+            today = "Wednesday";
+            coffee = {
+                name:"Mocha",
+                pic:"images/mocha.jpg",
+                alt:"a picture of a mocha tea",
+                color:"brown",
+                day:"Wednesday",
+                desc:` which is nice and chocolatey!`
+            
+            };
+    break;
+
+    case 4:
+        today = "Thursday";
+        coffee = {
+            name:"Frappaccino",
+            pic:"images/Frappaccino.jpg",
+            alt:"a picture of a Frappaccino",
+            color:"lavender",
+            day:"Thursday",
+            desc:`Frappaccino is so good!`
+        
+        };
+
+    break;
+
+    case 5:
+        today = "Friday";
+        coffee = {
+            name:"Drip",
+            pic:"images/drip.jpg",
+            alt:"a picture of a drip",
+            color:"green",
+            day:"Friday",
+            desc:`drip coffee is great!`
+        
+        };
+        
+    break;
+
+    case 6:
+        today = "Saturday";
+        coffee = {
+            name:"Caramel Latte",
+            pic:"images/caramel-latte.jpg",
+            alt:"a picture of a caramel latte ",
+            color:"teal",
+            day:"Saturday",
+            desc:`A caramel latte is so good and filling!`
+        
+        };
+        
     break;
 
     default:
